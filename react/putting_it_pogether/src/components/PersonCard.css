@@ -1,0 +1,9 @@
+.PersonCard {
+    padding-left: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #757575;
+}
+
+.PersonCard button {
+    margin-bottom: 15px;
+}
