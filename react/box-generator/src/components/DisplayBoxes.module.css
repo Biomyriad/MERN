@@ -1,0 +1,11 @@
+.DisplayBoxes {
+    border: 1px solid black;
+    display: flex;
+    min-height: 400px;
+    padding: 10px;
+    background-color: #eee;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
