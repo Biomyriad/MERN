@@ -1,0 +1,17 @@
+.TabView {
+    background-color: rgba(0,0,0,0);
+}
+
+.tabCollection {
+    display: flex;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.tabCollection :first-child {
+    border-top-left-radius: 8px;
+}
+
+.tabCollection :last-child {
+    border-top-right-radius: 8px;
+}

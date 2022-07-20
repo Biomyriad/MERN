@@ -1,0 +1,16 @@
+.Tab {
+    background-color: white;
+    border: 1px solid black;
+    min-height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    flex: 1;
+}
+
+.Tab:hover {
+    background-color: #ddd;
+}
+
+.selected {
+    background-color: #aaa !important;
+}
