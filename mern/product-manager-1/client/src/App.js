@@ -1,11 +1,18 @@
 import './App.css';
-import NewProductForm from './components/NewProductForm';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Products from './views/Products';
+import ProductDetail from './components/ProductDetail';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Product Manager</h1>
-      <NewProductForm/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Products />} default />
+          <Route path="/:id" element={<ProductDetail />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

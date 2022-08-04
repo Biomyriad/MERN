@@ -1,21 +1,27 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import axios from 'axios'
 
-export default function NewProductForm() {
+export default function NewProductForm(props) {
 
-  const [title, setTitle] = useState("")
-  const [price, setPrice] = useState("")
-  const [description, setDescription] = useState("")
+  const [products, setProducts] = props.products;
+
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [description, setDescription] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/api/product", 
+    axios.post("http://localhost:8000/api/products", 
     {
       title: title,
       price: price,
       description: description
     })
-      .then(response=>console.log(response))
+      .then(response => {
+        console.log(products);
+        setProducts([...products, response.data]);
+        console.log(products);
+      })
       .catch((err) => console.log(err))
   }
 
