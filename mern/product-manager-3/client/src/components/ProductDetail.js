@@ -8,6 +8,12 @@ export default function ProductDetail(props) {
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
+  const deleteProduct = (productId) => {
+    axios.delete(`http://localhost:8000/api/products/${id}`)
+    .then(res => navigate("/"))
+    .catch(err => console.log(err))
+  }
+
   useEffect(() => {
       axios.get(`http://localhost:8000/api/products/${id}`)
           .then((res) => {
@@ -27,7 +33,11 @@ export default function ProductDetail(props) {
         <li><span className="fw-bold">Product Price:</span> {product.price}</li>
         <li><span className="fw-bold">Product Description:</span> {product.description}</li>
       </ul>
-      <button onClick={() => navigate(-1)}>Go back</button>
+     
+      <div className="d-flex justify-content-end mt-3">
+          <button className="me-2" onClick={() => deleteProduct()}>Delete</button>
+          <button onClick={() => navigate(-1)}>Go back</button>
+      </div>
     </div>
   )
 }
